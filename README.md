@@ -38,5 +38,42 @@ A B C D E F G
 ```
 
 ### dataFile.io
-1. Top of the file will contain the full data of the file **subjectChoice.in**.
-2. The i-th line of the next m lines (m is the number of subjects) will contain a number k<sub>i</sub> representing the total number of seats and k<sub>i</sub>  
+1. Top of the file will contain the full data of the file **subjectChoice.in** and then a blank line.
+2. The next line will contain n strings where i-th of them represents the assigned subject of the i-th student respecting the order of the marit position and a blank line.
+3. The i-th line of the next m lines (m is the number of subjects) will contain a number k<sub>i</sub> representing the total number of seats and k<sub>i</sub> integers representing the marit positions of the selected student of the i-th subject in assending order and a blank line.
+4. The i-th line of the next m lines will contain a number l<sub>i</sub> representing the total number of the students in the queue of the subject to get auto migrated. And l<sub>i</sub> integers representing the marit positions of the students accordingly.
+#### Example
+```
+10 7
+A B C D E F G
+2 2 1 2 1 1 1
+1 1 7 D B A C E F G
+2 1 7 C B E D F G A
+3 1 7 A B C D E F G
+4 1 7 G F E D C B A
+5 1 7 G C B A D E F
+6 1 7 A G B F C E D
+7 1 7 G F E A B C D
+8 1 7 A B G C D E F
+9 1 7 A G B C D E F
+10 1 7 G D E C B F A
+
+D C A G B A F B D E
+
+3 6
+5 8
+2
+1 9
+10
+7
+4
+
+2 8 9
+1 9
+2 5 9
+1 10
+0
+0
+4 5 7 9 10
+```
+
