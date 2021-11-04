@@ -77,3 +77,35 @@ D C A G B A F B D E
 4 5 7 9 10
 ```
 
+### stuGetSub.out
+1. First line will contain an integer n representing the total number of students.
+2. The i-th line of the next n lines will contain 1 integer and 1 string k<sub>i</sub> and l<sub>i</sub> representing the marit position of i-th student and the assigned subject, then an integer p<sub>i</sub> representing the total number of subjects where the student is in the queue to get auto migrated.(If auto migration is off for this student, this integer will be 0). Then p<sub>i</sub> strings accordingly representing the subjects.
+#### Example
+```
+10
+1 D 0
+2 C 0
+3 A 0
+4 G 0
+5 B 2 G C
+6 A 0
+7 F 1 G
+8 B 1 A
+9 D 4 A G B C
+10 E 2 D G
+```
+
+### sub.out
+1. First line will contain an integer m representing the total number of the subjects.
+2. The i-th line of the next m lines will contain an integer p<sub>i</sub> as the total number of seats in the subject. Then p<sub>i</sub> integers representing the marit positions of the students who got assigned to the subject. Then an integer q<sub>i</sub> representing the number of the students wh are on the queue of the subject to get auto migrated to the subject. Then q<sub>i</sub> integers representing the marit positions of the students who ate in the auto migration queue of the subject.
+#### Example
+```
+7
+2 3 6 2 8 9
+2 5 8 1 9
+1 2 2 5 9
+2 1 9 1 10
+1 10 0
+1 7 0
+1 4 4 5 7 9 10
+```
