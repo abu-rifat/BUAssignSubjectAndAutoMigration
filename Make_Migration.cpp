@@ -12,13 +12,9 @@ Documentation:
 
 void Make_Migration(){
     // at first taking input from migration.in
-<<<<<<< HEAD
-    // input
-=======
     std::ifstream migin("migration.in");
     //freopen("migration.in","r",stdin);
     //freopen("temp.out","w",stdout);
->>>>>>> 58ad7e529384c47bd016fdd9fd7c693523c180dd
     int admission_cancelled_number, migration_off_number;
     vector<int> admission_cancelled, migration_off;
     migin >> admission_cancelled_number;
