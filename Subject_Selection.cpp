@@ -78,6 +78,12 @@ void sub_selection(){
         cout << total_seats[i] <<" ";
     }
     cout << endl;
+    int total_admitted[t_students] = {0};
+    for(int i = 0; i < t_students; i++){
+        cout << total_admitted[i] <<" ";
+    }
+    cout << endl;
+    
     for(int i = 0; i < t_students; i++){
         cout << rev_merit_map[i] <<" "<< migrations[i]<<" "<< given_choice_list[i].size()<<" ";
         for(int j = 0; j < given_choice_list[i].size(); j++){
@@ -93,14 +99,18 @@ void sub_selection(){
             string str = rev_sub_map[selected_for_individual[i]];
             cout << str <<" ";
         }
-        else cout <<"Not Selected! ";
+        else cout <<"Not_Selected! ";
     }
     cout << endl << endl;
+    
 
     for(int i = 0; i < t_subjects; i++){
         for(auto j: selected_subjects[i]){
             int merit_ = rev_merit_map[j];
             cout << merit_<<" ";
+        }
+        for(int j = selected_subjects[i].size(); j < total_seats[i]; j++){
+            cout << -1 <<" ";
         }
         cout << endl;
     }
@@ -119,7 +129,8 @@ void sub_selection(){
 
 int main(){
     // Locate file here
-
+    
     // starting coding
+    
     sub_selection();
 }
