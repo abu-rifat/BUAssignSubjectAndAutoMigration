@@ -12,7 +12,7 @@ Documentation:
 
 void Make_Migration(){
     // at first taking input from migration.in
-    
+    // input
     int admission_cancelled_number, migration_off_number;
     vector<int> admission_cancelled, migration_off;
     cin >> admission_cancelled_number;
@@ -25,6 +25,7 @@ void Make_Migration(){
     }
     // input from migration.in completed
     // input from datafile.io started
+    // input output = datafileagain.io
     int t_students, t_subjects;
     cin >> t_students >> t_subjects;
 
@@ -53,7 +54,8 @@ void Make_Migration(){
     vector<int> given_choice_list[t_students];
 
     for(int i = 0; i < t_students; i++){
-        cin >> merit                                                                                                       ; merit_map[merit] = cntr++; rev_merit_map[cntr - 1] = merit;
+        cin >> merit;
+         merit_map[merit] = cntr++; rev_merit_map[cntr - 1] = merit;
         cin >> status; migrations[cntr - 1] = status;
         cin >> sub_choice_sz;
         for(int j = 0; j < sub_choice_sz; j++){
@@ -195,6 +197,7 @@ void Make_Migration(){
         cout << endl;
     }
     cout << endl;
+    //copying from datafileagain.io to datafile.io
     
 }
 
