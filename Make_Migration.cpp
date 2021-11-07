@@ -11,58 +11,43 @@ Documentation:
 */
 
 void Make_Migration(){
-    // at first taking input from migration.in
     std::ifstream migin("migration.in");
-    //freopen("migration.in","r",stdin);
-    //freopen("temp.out","w",stdout);
     int admission_cancelled_number, migration_off_number;
     vector<int> admission_cancelled, migration_off;
     migin >> admission_cancelled_number;
-    //cout<<admission_cancelled_number<<"\n";
-    
     for(int i = 0; i < admission_cancelled_number; i++){
         int a;
         migin >> a;
-        //cout<<a<<"\n";
         admission_cancelled.push_back(a);
     }
     migin >> migration_off_number;
-    //cout<<migration_off_number<<"\n";
     for(int i = 0; i < migration_off_number; i++){
         int a;
         migin >> a;
-        //cout<<a<<"\n";
         migration_off.push_back(a);
     }
     
-    freopen("datafile.io","r",stdin);
-    freopen("temp.out","w",stdout);
-    // input from migration.in completed
-    // input from datafile.io started
-    // input output = datafileagain.io
+    freopen("dataFile.io","r",stdin);
     int t_students, t_subjects;
     cin >> t_students >> t_subjects;
     map<string, int> sub_map; map<int, string> rev_sub_map;
     for(int i = 0; i < t_subjects; i++){
         string str;
-        cin >> str; //cout << str << " ";
+        cin >> str;
         sub_map[str] = i;
         rev_sub_map[i] = str;
     }
-    //cout << endl;
 
     vector<int> total_seats(t_subjects);
     for(int i = 0; i < t_subjects; i++){
         int a;
-        cin >> a; //cout << a << " ";
+        cin >> a;
         total_seats[i] = a;
     }
-    //cout << endl;
     vector<int> admitted(t_students, 0);
     for(int i = 0; i < t_students; i++){
-        cin >> admitted[i]; //cout << admitted[i] << " ";
+        cin >> admitted[i];
     }
-    //cout << endl;
     map<int, int> merit_map, rev_merit_map;
     bool migrations[t_students];
     int merit, sub_choice_sz, cntr = 0;
@@ -70,14 +55,14 @@ void Make_Migration(){
     vector<int> given_choice_list[t_students];
 
     for(int i = 0; i < t_students; i++){
-        cin >> merit; //cout << merit <<" ";
+        cin >> merit;
          merit_map[merit] = cntr++; rev_merit_map[cntr - 1] = merit;
         cin >> status; migrations[cntr - 1] = status;
         cin >> sub_choice_sz;
         for(int j = 0; j < sub_choice_sz; j++){
-            string str; //cout << str << endl;
+            string str;
             cin >> str; int idx = sub_map[str];
-            given_choice_list[i].push_back(idx); // ith student's subject list
+            given_choice_list[i].push_back(idx);
         }
     }
     
@@ -86,7 +71,7 @@ void Make_Migration(){
     set<int> waiting_subjects[t_subjects];
     for(int i = 0; i < t_students; i++){
         string str;
-        cin >> str; //cout << str << endl;
+        cin >> str;
         if(str == "Not_Selected!"){
             selected_for_individual[i] = -1;continue;
         }
@@ -111,8 +96,7 @@ void Make_Migration(){
         int sz;
         cin >> sz;
         for(int j = 0; j < sz; j++){
-            int idx; cin >> idx; //idx = merit_map[idx];
-            //waiting_subjects[i].insert(idx);
+            int idx; cin >> idx;
         }
     }
    
@@ -129,19 +113,17 @@ void Make_Migration(){
         int a = merit_map[admission_cancelled[i]];
         int idx = selected_for_individual[a];
         selected_subjects[idx].erase(a);
-        //cout << i <<" "<<idx << endl;
     }
     
     for(int i = 0; i < t_subjects; i++){
         waiting_subjects[i].clear();
     }
-    ///-----------------------------
     for(int i = 0; i < t_students; i++){
         if(admitted[i] == 0){
             for(int j = 0; j < given_choice_list[i].size(); j++){
                 int idx = given_choice_list[i][j];
                 if(idx == selected_for_individual[i])break;
-                if(selected_subjects[idx].size() < total_seats[idx]){ // if assignable
+                if(selected_subjects[idx].size() < total_seats[idx]){
                     int old_idx = selected_for_individual[i];
                     selected_subjects[old_idx].erase(i);
                     selected_for_individual[i] = idx;
@@ -156,6 +138,7 @@ void Make_Migration(){
     }
     
     // printing inputs
+    freopen("dataFile.io","w",stdout);
     cout << t_students<<" "<< t_subjects << endl;
     for(int i = 0; i < t_subjects; i++){
         cout << rev_sub_map[i]<<" ";
@@ -170,7 +153,6 @@ void Make_Migration(){
     }
     cout << endl;
     for(int i = 0; i < t_students; i++){
-        //if(admitted[i] != 0)continue;
         cout << rev_merit_map[i] <<" "<< migrations[i]<<" "<< given_choice_list[i].size()<<" ";
         for(int j = 0; j < given_choice_list[i].size(); j++){
             int idx = given_choice_list[i][j];

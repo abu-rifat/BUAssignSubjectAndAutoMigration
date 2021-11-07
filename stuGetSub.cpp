@@ -50,6 +50,10 @@ int main(){
 	
 	for(int i=1;i<=stuCt;i++){
 		cout<<merit_list[i]<<" "<<selected_subject[i]<<" ";
+		if(selected_subject[i]=="a_c"){
+			cout<<"\n";
+			continue;
+		}
 		int idx=0;
 		vector<string>waiting_subject;
 		for(int j=1;j<=number_of_subject_choice[i];j++){

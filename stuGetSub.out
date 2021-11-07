@@ -2,10 +2,10 @@
 1 D 0
 2 C 0
 3 A 0
-4 G 0
-5 B 2 G C
+4 a_c 
+5 G 0
 6 A 0
 7 F 1 G
 8 B 1 A
-9 D 4 A G B C
-10 E 2 G D
+9 B 2 A G
+10 D 1 G
