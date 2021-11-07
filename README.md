@@ -115,25 +115,25 @@ D C A G B A F B D E
 1. Open terminal or power-shell.
 2. run ```g++ Subject_Selection.cpp```
 3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
-4. The result is now stored in 'dataFile.io'.
+4. The result is now stored in <b>'dataFile.io'</b>.
 
 ### To make migration:
 #### Must do the first run to get correct results.
 1. Open terminal or power-shell.
 2. run ```g++ Make_Migration.cpp```
 3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
-4. The result is now stored in 'dataFile.io'.
+4. The result is now stored in <b>'dataFile.io'</b>.
 
 ### Get Student based Output:
 #### Must do the first run or migration to get correct results.
 1. Open terminal or power-shell.
 2. run ```g++ stuGetSub.cpp```
 3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
-4. The result is now stored in 'stuGetSub.out'.
+4. The result is now stored in <b>'stuGetSub.out'</b>.
 
 ### Get Subject based Output:
 #### Must do the first run or migration to get correct results.
 1. Open terminal or power-shell.
 2. run ```g++ sub.cpp```
 3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
-4. The result is now stored in 'sub.out'.
+4. The result is now stored in <b>'sub.out'</b>.
