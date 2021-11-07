@@ -129,7 +129,8 @@ void sub_selection(){
 
 int main(){
     // Locate file here
-    
+    freopen("Subject_Selection.in","r",stdin);
+    freopen("dataFile.io","w",stdout);
     // starting coding
     
     sub_selection();

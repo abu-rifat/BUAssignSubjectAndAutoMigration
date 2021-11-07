@@ -12,17 +12,32 @@ Documentation:
 
 void Make_Migration(){
     // at first taking input from migration.in
-    
+    std::ifstream migin("migration.in");
+    //freopen("migration.in","r",stdin);
+    //freopen("temp.out","w",stdout);
     int admission_cancelled_number, migration_off_number;
     vector<int> admission_cancelled, migration_off;
-    cin >> admission_cancelled_number;
+    migin >> admission_cancelled_number;
+    
+    //cout<<admission_cancelled_number<<"\n";
+    
     for(int i = 0; i < admission_cancelled_number; i++){
-        int a; cin >> a; admission_cancelled.push_back(a);
+        int a;
+        migin >> a;
+        //cout<<a<<"\n";
+        admission_cancelled.push_back(a);
     }
-    cin >> migration_off_number;
+    migin >> migration_off_number;
+    //cout<<migration_off_number<<"\n";
     for(int i = 0; i < migration_off_number; i++){
-        int a; cin >> a; migration_off.push_back(a);
+        int a;
+        migin >> a;
+        //cout<<a<<"\n";
+        migration_off.push_back(a);
     }
+    
+    freopen("datafile.io","r",stdin);
+    freopen("temp.out","w",stdout);
     // input from migration.in completed
     // input from datafile.io started
     int t_students, t_subjects;
