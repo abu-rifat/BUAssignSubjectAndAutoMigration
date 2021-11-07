@@ -1,6 +1,7 @@
 10 7
 A B C D E F G
 2 2 1 2 1 1 1
+0 0 0 0 0 0 0 0 0 0
 1 1 7 D B A C E F G
 2 1 7 C B E D F G A
 3 1 7 A B C D E F G
