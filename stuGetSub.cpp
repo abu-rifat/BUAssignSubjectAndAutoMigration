@@ -24,6 +24,10 @@ int main(){
 	for(int i=1;i<=subCt;i++){
 		cin>>total_seats[i];
 	}
+	int no_need;
+	for(int i=1;i<=stuCt;i++){
+		cin>>no_need;
+	}
 	int merit_list[stuCt+6];
 	bool migration_status[stuCt+6];
 	int number_of_subject_choice[stuCt+6];
