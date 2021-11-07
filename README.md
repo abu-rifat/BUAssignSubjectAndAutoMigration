@@ -2,7 +2,7 @@
 Assign Subject and Auto Migration based on GST result BU
 
 ## File Formats:
-### subjectChoice.in
+### Subject_Selection.in
 1. First line will contain 2 variables n and m. Where n is the total number of students and m is the total number of available subjects.
 2. Next line will contain m strings representing the m subjects accordingly
 3. Next line will contain m integers representing the total seats on that subjects accordingly
@@ -25,7 +25,7 @@ A B C D E F G
 10 1 7 G D E C B F A
 ```
 
-### AutoMigrate.in
+### migration.in
 1. First line will contain an integer n representing the number of students who didn't get admitted to the selected subject.
 2. The next line will contain n integers representing the marit position of the n students who didn't get admitted to the selected subject.
 3. The next line will contain an integer m representing the number of students who want to off the auto migration.
@@ -109,3 +109,31 @@ D C A G B A F B D E
 1 7 0
 1 4 4 5 7 9 10
 ```
+
+## How to run this Project?
+### To make the first run (Assign subject for the first time):
+1. Open terminal or power-shell.
+2. run ```g++ Subject_Selection.cpp```
+3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
+4. The result is now stored in 'dataFile.io'.
+
+### To make migration:
+#### Must do the first run to get correct results.
+1. Open terminal or power-shell.
+2. run ```g++ Make_Migration.cpp```
+3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
+4. The result is now stored in 'dataFile.io'.
+
+### Get Student based Output:
+#### Must do the first run or migration to get correct results.
+1. Open terminal or power-shell.
+2. run ```g++ stuGetSub.cpp```
+3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
+4. The result is now stored in 'stuGetSub.out'.
+
+### Get Subject based Output:
+#### Must do the first run or migration to get correct results.
+1. Open terminal or power-shell.
+2. run ```g++ sub.cpp```
+3. For linux: run ```./a.out```, for Windows: run ```./a.exe```
+4. The result is now stored in 'sub.out'.
