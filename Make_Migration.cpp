@@ -18,7 +18,6 @@ void Make_Migration(){
     int admission_cancelled_number, migration_off_number;
     vector<int> admission_cancelled, migration_off;
     migin >> admission_cancelled_number;
-    
     //cout<<admission_cancelled_number<<"\n";
     
     for(int i = 0; i < admission_cancelled_number; i++){
@@ -43,25 +42,27 @@ void Make_Migration(){
     // input output = datafileagain.io
     int t_students, t_subjects;
     cin >> t_students >> t_subjects;
-
     map<string, int> sub_map; map<int, string> rev_sub_map;
     for(int i = 0; i < t_subjects; i++){
         string str;
-        cin >> str;
+        cin >> str; //cout << str << " ";
         sub_map[str] = i;
         rev_sub_map[i] = str;
     }
+    //cout << endl;
 
     vector<int> total_seats(t_subjects);
     for(int i = 0; i < t_subjects; i++){
         int a;
-        cin >> a;
+        cin >> a; //cout << a << " ";
         total_seats[i] = a;
     }
+    //cout << endl;
     vector<int> admitted(t_students, 0);
     for(int i = 0; i < t_students; i++){
-        cin >> admitted[i];
+        cin >> admitted[i]; //cout << admitted[i] << " ";
     }
+    //cout << endl;
     map<int, int> merit_map, rev_merit_map;
     bool migrations[t_students];
     int merit, sub_choice_sz, cntr = 0;
@@ -69,12 +70,12 @@ void Make_Migration(){
     vector<int> given_choice_list[t_students];
 
     for(int i = 0; i < t_students; i++){
-        cin >> merit;
+        cin >> merit; //cout << merit <<" ";
          merit_map[merit] = cntr++; rev_merit_map[cntr - 1] = merit;
         cin >> status; migrations[cntr - 1] = status;
         cin >> sub_choice_sz;
         for(int j = 0; j < sub_choice_sz; j++){
-            string str;
+            string str; //cout << str << endl;
             cin >> str; int idx = sub_map[str];
             given_choice_list[i].push_back(idx); // ith student's subject list
         }
@@ -85,7 +86,7 @@ void Make_Migration(){
     set<int> waiting_subjects[t_subjects];
     for(int i = 0; i < t_students; i++){
         string str;
-        cin >> str;
+        cin >> str; //cout << str << endl;
         if(str == "Not_Selected!"){
             selected_for_individual[i] = -1;continue;
         }
